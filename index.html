@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="صيدليتك المتكاملة أونلاين - رفع الروشتات، طلب الأدوية والأجهزة الطبية ومستحضرات التجميل مع خدمة توصيل سريعة">
+    <meta name="keywords" content="صيدلية, أدوية, روشتات, أجهزة طبية, تجميل, توصيل منازل">
+    <meta name="author" content="PharmacyHub">
+    <meta name="theme-color" content="#0f7b6e">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="صيدلية CarePlus - صحتك تبدأ من هنا">
+    <meta property="og:description" content="خدمات صيدلانية متكاملة: رفع الروشتات، توصيل سريع، أفضل العروض">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=CarePlus+Pharmacy">
+    <meta property="og:url" content="https://yourpharmacy.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_AR">
+    <title>CarePlus | صيدليتك الذكية أونلاين</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f9fbfd;
+            color: #1e2a41;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* custom scroll */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #eef2f7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0f7b6e;
+            border-radius: 10px;
+        }
+
+        /* color palette */
+        :root {
+            --primary: #0f7b6e;
+            --primary-dark: #0a5f55;
+            --secondary: #2abfa3;
+            --accent: #ff8c5a;
+            --light: #ffffff;
+            --gray-bg: #f4f7fc;
+            --text-dark: #1f2a44;
+            --shadow: 0 20px 35px -10px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        /* Buttons & elements */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            text-decoration: none;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 8px 18px rgba(15,123,110,0.2);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -8px rgba(15,123,110,0.4);
+        }
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary);
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: scale(1.02);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #e6f4f1 0%, #d4ece7 100%);
+            padding: 40px 0 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .logo i {
+            font-size: 2rem;
+            margin-left: 8px;
+        }
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 20px 0 15px;
+            line-height: 1.2;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #2c3e4e;
+            margin-bottom: 30px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .hero-img {
+            flex: 0.8;
+            text-align: center;
+        }
+        .hero-img img {
+            max-width: 100%;
+            filter: drop-shadow(0 15px 20px rgba(0,0,0,0.1));
+        }
+
+        /* sections */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        /* services grid */
+        .services-grid, .offers-grid, .devices-grid, .cosmetics-grid, .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+        .service-card, .offer-card, .device-card, .cosmetic-card, .feature-card {
+            background: white;
+            border-radius: 28px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            cursor: default;
+        }
+        .service-card:hover, .offer-card:hover, .device-card:hover, .cosmetic-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 40px -12px rgba(0,0,0,0.15);
+        }
+        .service-card i, .feature-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .service-card h3, .device-card h3, .cosmetic-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        /* offer card special */
+        .offer-card {
+            background: linear-gradient(145deg, #fff, #fef9e6);
+            border: 1px solid rgba(255,140,90,0.2);
+            position: relative;
+        }
+        .offer-card .discount {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        /* devices & cosmetics images */
+        .device-img, .cosmetic-img {
+            background: #f0f6f5;
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        /* main form */
+        .main-form {
+            background: white;
+            border-radius: 40px;
+            padding: 45px;
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .input-group label {
+            font-weight: 600;
+        }
+        .input-group input, .input-group select, .input-group textarea {
+            padding: 14px 18px;
+            border: 1px solid #e2e8f0;
+            border-radius: 30px;
+            font-family: 'Cairo', sans-serif;
+            transition: 0.2s;
+        }
+        .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(15,123,110,0.2);
+        }
+        .file-label {
+            background: #f1f5f9;
+            border-radius: 30px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .submit-btn {
+            grid-column: 1 / -1;
+            justify-self: center;
+            margin-top: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f2a2f;
+            color: #cfdfe2;
+            padding: 50px 0 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-grid h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .social-links a {
+            color: #fff;
+            margin-left: 15px;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2a4a4f;
+            padding-top: 30px;
+        }
+
+        /* floating elements */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: 0.2s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background: #128C7E;
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+        }
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-up.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2rem; }
+            .container { padding: 0 20px; }
+            .main-form { padding: 25px; }
+            section { padding: 50px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- WhatsApp Float -->
+<a href="#" id="whatsappFloatBtn" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+<div class="scroll-top" id="scrollTopBtn">
+    <i class="fas fa-chevron-up"></i>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <div class="logo">
+                <i class="fas fa-capsules"></i> CarePlus
+            </div>
+            <h1>صحتك تبدأ <span style="color: var(--primary);">بخطوة</span><br> نوصلك الدواء لباب دارك</h1>
+            <p>أسرع خدمة صيدلانية أونلاين – رفع الروشتات، توصيل فوري، وأفضل العروض على الأدوية والأجهزة الطبية ومستحضرات التجميل.</p>
+            <div class="btn-group">
+                <a href="#orderForm" class="btn btn-primary"><i class="fas fa-prescription-bottle"></i> اطلب الآن</a>
+                <a href="https://wa.me/201552264714?text=أهلاً%20أحتاج%20استشارة" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> واتساب</a>
+                <a href="tel:+201552264714" class="btn btn-outline-light" style="border-color:var(--primary); color:var(--primary);"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="https://placehold.co/500x400/e6f4f1/0f7b6e?text=Pharmacy+Care" alt="صيدلية CarePlus">
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="container" id="services">
+    <h2 class="section-title">خدماتنا المتكاملة</h2>
+    <div class="services-grid">
+        <div class="service-card"><i class="fas fa-file-prescription"></i><h3>رفع الروشتات</h3><p>ارفع روشتتك وسنقوم بتحضير الدواء</p></div>
+        <div class="service-card"><i class="fas fa-pills"></i><h3>طلب الأدوية</h3><p>جميع الأصناف الدوائية بأمانة</p></div>
+        <div class="service-card"><i class="fas fa-microscope"></i><h3>الأجهزة الطبية</h3><p>أجهزة قياس الضغط، السكر والمزيد</p></div>
+        <div class="service-card"><i class="fas fa-hand-cream"></i><h3>مستحضرات التجميل</h3><p>منتجات اصلية للعناية بالبشرة</p></div>
+        <div class="service-card"><i class="fas fa-truck"></i><h3>التوصيل للمنازل</h3><p>توصيل سريع وآمن لجميع المناطق</p></div>
+    </div>
+</section>
+
+<!-- Offers Section -->
+<section style="background: var(--gray-bg);">
+    <div class="container">
+        <h2 class="section-title">عروض حصرية</h2>
+        <div class="offers-grid">
+            <div class="offer-card"><i class="fas fa-tag" style="font-size:2rem; color:var(--accent);"></i><div class="discount">خصم 30%</div><p>على أدوية الضغط والسكري</p><small>حتى نهاية الشهر</small></div>
+            <div class="offer-card"><i class="fas fa-couch"></i><div class="discount">خصم 20%</div><p>أجهزة قياس الحرارة الرقمية</p></div>
+            <div class="offer-card"><i class="fas fa-spa"></i><div class="discount">شراء 1 + 1</div><p>على سيروم فيتامين سي</p></div>
+            <div class="offer-card"><i class="fas fa-truck-fast"></i><div class="discount">توصيل مجاني</div><p>للطلبات فوق 300 جنيه</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Medical Devices Section -->
+<section class="container">
+    <h2 class="section-title">الأجهزة الطبية الأكثر طلباً</h2>
+    <div class="devices-grid">
+        <div class="device-card"><div class="device-img"><i class="fas fa-heartbeat"></i></div><h3>جهاز قياس الضغط</h3><p>دقيق وسهل الاستخدام</p><button class="btn btn-primary device-order" style="margin-top:15px; padding:8px 20px;">طلب الآن</button></div>
+        <div class="device-card"><div class="device-img"><i class="fas fa-tachometer-alt"></i></div><h3>جهاز قياس السكر</h3><p>شرائط مجانية مع الجهاز</p><button class="btn btn-primary device-order" style="margin-top:15px; padding:8px 20px;">طلب الآن</button></div>
+        <div class="device-card"><div class="device-img"><i class="fas fa-lungs"></i></div><h3>بخاخة موسعة للشعب</h3><p>أحدث تقنية</p><button class="btn btn-primary device-order" style="margin-top:15px; padding:8px 20px;">طلب الآن</button></div>
+        <div class="device-card"><div class="device-img"><i class="fas fa-thermometer-half"></i></div><h3>ميزان حرارة ليزر</h3><p>دقة فائقة</p><button class="btn btn-primary device-order" style="margin-top:15px; padding:8px 20px;">طلب الآن</button></div>
+    </div>
+</section>
+
+<!-- Cosmetics Section -->
+<section style="background: var(--gray-bg);">
+    <div class="container">
+        <h2 class="section-title">أشهر مستحضرات التجميل</h2>
+        <div class="cosmetics-grid">
+            <div class="cosmetic-card"><div class="cosmetic-img"><i class="fas fa-water"></i></div><h3>سيروم فيتامين C</h3><p>مشرق للبشرة</p><button class="btn btn-primary cosmetic-order" style="margin-top:12px;">اطلب الآن</button></div>
+            <div class="cosmetic-card"><div class="cosmetic-img"><i class="fas fa-sun"></i></div><h3>واقي شمسي SPF50</h3><p>حماية فائقة</p><button class="btn btn-primary cosmetic-order" style="margin-top:12px;">اطلب الآن</button></div>
+            <div class="cosmetic-card"><div class="cosmetic-img"><i class="fas fa-eye"></i></div><h3>ماسكرا ومحدد عيون</h3><p>مقاوم للماء</p><button class="btn btn-primary cosmetic-order" style="margin-top:12px;">اطلب الآن</button></div>
+            <div class="cosmetic-card"><div class="cosmetic-img"><i class="fas fa-leaf"></i></div><h3>كريم الريتinol</h3><p>مكافحة التجاعيد</p><button class="btn btn-primary cosmetic-order" style="margin-top:12px;">اطلب الآن</button></div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="container">
+    <h2 class="section-title">لماذا تختار CarePlus؟</h2>
+    <div class="features-grid">
+        <div class="feature-card"><i class="fas fa-bolt"></i><h3>سرعة التجهيز</h3><p>تحضير الطلب خلال ساعة</p></div>
+        <div class="feature-card"><i class="fas fa-motorcycle"></i><h3>توصيل سريع</h3><p>توصيل خلال 2-4 ساعات</p></div>
+        <div class="feature-card"><i class="fas fa-chart-line"></i><h3>أسعار تنافسية</h3><p>أقل من السوق</p></div>
+        <div class="feature-card"><i class="fas fa-headset"></i><h3>خدمة عملاء 24/7</h3><p>دعم مستمر</p></div>
+    </div>
+</section>
+
+<!-- Main Order Form -->
+<section id="orderForm" class="container" style="padding-top: 20px;">
+    <h2 class="section-title">نموذج طلب سريع</h2>
+    <div class="main-form">
+        <form id="pharmacyOrderForm">
+            <div class="form-grid">
+                <div class="input-group"><label><i class="fas fa-user"></i> الاسم الكامل *</label><input type="text" id="fullName" required placeholder="أدخل اسمك"></div>
+                <div class="input-group"><label><i class="fas fa-phone-alt"></i> رقم الهاتف *</label><input type="tel" id="phone" required placeholder="مثال: 0123456789"></div>
+                <div class="input-group"><label><i class="fas fa-map-marker-alt"></i> العنوان *</label><input type="text" id="address" required placeholder="المدينة - الحي - الشارع"></div>
+                <div class="input-group"><label><i class="fas fa-boxes"></i> نوع الطلب</label><select id="orderType"><option value="أدوية">أدوية</option><option value="مستحضرات تجميل">مستحضرات تجميل</option><option value="أجهزة طبية">أجهزة طبية</option><option value="استفسار">استفسار</option></select></div>
+                <div class="input-group"><label><i class="fas fa-shipping-fast"></i> طريقة الاستلام</label><select id="deliveryMethod"><option value="توصيل">توصيل للمنزل</option><option value="استلام من الصيدلية">استلام من الصيدلية</option></select></div>
+                <div class="input-group"><label><i class="fas fa-file-upload"></i> رفع صورة الروشتة (اختياري)</label><input type="file" id="prescriptionImage" accept="image/*"></div>
+                <div class="input-group"><label><i class="fas fa-sticky-note"></i> ملاحظات إضافية</label><textarea rows="3" id="notes" placeholder="تفاصيل الطلب، الدواء المطلوب..."></textarea></div>
+                <button type="submit" class="btn submit-btn"><i class="fab fa-whatsapp"></i> إرسال الطلب عبر واتساب</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><h4><i class="fas fa-store"></i> CarePlus Pharmacy</h4><p>شارع النيل، برج الصحة، القاهرة<br>أقرب صيدلية لك على مدار الساعة</p></div>
+            <div><h4>اتصل بنا</h4><p><i class="fas fa-phone-alt"></i> +20 155 226 4714<br><i class="fab fa-whatsapp"></i> +20 155 226 4714<br><i class="fas fa-envelope"></i> info@careplus.com</p></div>
+            <div><h4>ساعات العمل</h4><p>يومياً: 9 صباحاً – 12 midnight<br>الخدمة الطارئة: 24 ساعة<br>التوصيل حتى 2 صباحاً</p></div>
+            <div><h4>تابعنا</h4><div class="social-links"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div></div>
+        </div>
+        <div class="copyright"><p>© 2025 CarePlus Pharmacy – جميع الحقوق محفوظة | تصميم صيدلي متكامل</p></div>
+    </div>
+</footer>
+
+<script>
+    // Configuration: Pharmacy WhatsApp & Phone Number
+    const PHARMACY_NUMBER = "201552264714";   // رقم الواتساب بدون علامة + (بالصيغة الدولية)
+    const PHONE_LINK = "+201552264714";
+    
+    // Update all dynamic phone links in hero and footer to ensure consistency
+    document.querySelectorAll('a[href^="tel:"]').forEach(el => {
+        if(el.getAttribute('href') === "tel:+201234567890") el.setAttribute('href', `tel:${PHONE_LINK}`);
+    });
+    document.querySelectorAll('a[href^="https://wa.me/"]').forEach(el => {
+        if(el.getAttribute('href').includes("201234567890")) {
+            el.setAttribute('href', `https://wa.me/${PHARMACY_NUMBER}?text=أهلاً%20أحتاج%20استشارة`);
+        }
+    });
+    
+    // Scroll animation observer
+    const fadeElements = document.querySelectorAll('.service-card, .offer-card, .device-card, .cosmetic-card, .feature-card, .main-form');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    fadeElements.forEach(el => {
+        el.classList.add('fade-up');
+        observer.observe(el);
+    });
+
+    // Scroll to top button
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 500) scrollBtn.classList.add('show');
+        else scrollBtn.classList.remove('show');
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Handle main form submission
+    const orderForm = document.getElementById('pharmacyOrderForm');
+    orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const address = document.getElementById('address').value.trim();
+        const orderType = document.getElementById('orderType').value;
+        const deliveryMethod = document.getElementById('deliveryMethod').value;
+        const notes = document.getElementById('notes').value.trim();
+        const fileInput = document.getElementById('prescriptionImage');
+        let prescriptionInfo = '';
+        if(fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            prescriptionInfo = `🖼️ روشتة مرفقة: ${file.name} (يمكنك إرسال الصورة لاحقاً)`;
+        } else {
+            prescriptionInfo = `📄 لم يتم رفع روشتة`;
+        }
+
+        if(!name || !phone || !address) {
+            alert('الرجاء تعبئة الاسم ورقم الهاتف والعنوان');
+            return;
+        }
+        if(phone.length < 9) {
+            alert('الرجاء إدخال رقم هاتف صحيح');
+            return;
+        }
+
+        const message = `🩺 *طلب جديد من CarePlus* 🩺%0A%0A👤 *الاسم:* ${name}%0A📞 *الهاتف:* ${phone}%0A📍 *العنوان:* ${address}%0A📦 *نوع الطلب:* ${orderType}%0A🚚 *طريقة الاستلام:* ${deliveryMethod}%0A📝 *ملاحظات:* ${notes || "لا توجد ملاحظات"}%0A${prescriptionInfo}%0A%0A✅ الرجاء التواصل معي لتأكيد الطلب. شكراً!`;
+
+        const whatsappUrl = `https://wa.me/${PHARMACY_NUMBER}?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+    });
+
+    // Generic function for device/cosmetic quick order
+    function quickOrder(typeLabel, productName) {
+        const orderTypeSelect = document.getElementById('orderType');
+        if(orderTypeSelect) {
+            if(typeLabel === 'device') orderTypeSelect.value = 'أجهزة طبية';
+            else if(typeLabel === 'cosmetic') orderTypeSelect.value = 'مستحضرات تجميل';
+        }
+        const notesField = document.getElementById('notes');
+        if(notesField) {
+            let current = notesField.value;
+            notesField.value = current ? `${current}\nطلب جهاز/منتج: ${productName}` : `طلب جهاز/منتج: ${productName}`;
+        }
+        document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Attach quick order to device buttons
+    document.querySelectorAll('.device-order').forEach((btn, idx) => {
+        const deviceNames = ['جهاز قياس الضغط', 'جهاز قياس السكر', 'بخاخة موسعة', 'ميزان حرارة ليزر'];
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            quickOrder('device', deviceNames[idx] || 'جهاز طبي');
+        });
+    });
+    document.querySelectorAll('.cosmetic-order').forEach((btn, idx) => {
+        const cosmeticNames = ['سيروم فيتامين C', 'واقي شمسي SPF50', 'ماسكرا ومحدد عيون', 'كريم ريتينول'];
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            quickOrder('cosmetic', cosmeticNames[idx] || 'مستحضر تجميل');
+        });
+    });
+
+    // WhatsApp floating button (fixed)
+    const floatBtn = document.getElementById('whatsappFloatBtn');
+    floatBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const msg = "مرحباً! أحتاج مساعدة بخصوص طلب أدوية أو روشتة.";
+        window.open(`https://wa.me/${PHARMACY_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+</script>
+</body>
+</html>
